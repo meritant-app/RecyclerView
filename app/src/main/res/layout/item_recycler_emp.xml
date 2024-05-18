@@ -1,48 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="20dp"
-    android:layout_marginTop="20dp"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/ivEmployee"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="20dp"
-        android:background="#88868D"
-        android:layout_marginTop="5dp"
-        android:src="@drawable/round_person_24"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="employee"
+            type="com.app.basicrecyclerview_employee.Employee" />
 
-    <TextView
-        android:id="@+id/tvEmpName"
-        android:layout_width="0dp"
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/employee_name"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintLeft_toRightOf="@id/ivEmployee"
-        app:layout_constraintTop_toTopOf="@id/ivEmployee" />
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
 
-    <TextView
-        android:id="@+id/tvEmpRoll"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/employee_role"
-        android:textColor="@android:color/holo_green_dark"
-        android:textSize="16sp"
-        app:layout_constraintLeft_toRightOf="@id/ivEmployee"
-        app:layout_constraintTop_toBottomOf="@id/tvEmpName" />
+        <ImageView
+            android:id="@+id/ivEmployee"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            android:background="#88868D"
+            android:layout_marginTop="5dp"
+            setImage="@{employee.empProfilePic}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvEmpName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-medium"
+            setText="@{employee.empName}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toRightOf="@id/ivEmployee"
+            app:layout_constraintTop_toTopOf="@id/ivEmployee" />
+
+        <TextView
+            android:id="@+id/tvEmpRoll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-medium"
+            setText="@{employee.empRoll}"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toRightOf="@id/ivEmployee"
+            app:layout_constraintTop_toBottomOf="@id/tvEmpName" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -19,13 +19,15 @@ class MainActivity : AppCompatActivity() {
     private fun setUpRecycler(){
 
         employeeRecycler=findViewById(R.id.rvEmployee)
-        employeeRecycler.adapter=EmployeeAdapter(employeeList)
+        val adapter=EmployeeAdapter()
+        employeeRecycler.adapter=adapter
+        adapter.submitList(employeeList)
         employeeRecycler.layoutManager=LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
     }
 
     private fun setupList(){
         for (i in 0..30){
-            employeeList.add(i,Employee(R.drawable.round_person_24,"Mark Zuckerberg","System Engineer"))
+            employeeList.add(i, Employee(R.drawable.img,"Mark Zuckerberg","System Engineer"))
         }
         setUpRecycler()
     }
