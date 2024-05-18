@@ -15,6 +15,7 @@ class EmployeeAdapter(val empList:List<Employee>):RecyclerView.Adapter<EmployeeA
         val empProfilePic=itemView.findViewById<ImageView>(R.id.ivEmployee)
         val empName=itemView.findViewById<TextView>(R.id.tvEmpName)
         val empRoll=itemView.findViewById<TextView>(R.id.tvEmpRoll)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): employeeViewHolder {
